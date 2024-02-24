@@ -43,7 +43,7 @@ function doCount() {
   inputCalendar.disabled = true
   buttonCalendar.disabled = true
   const timeCount = setInterval(() => {
-        const currentDate = new Date()
+        const currentDate = Date.now()
     const ms = userSelectedDate - currentDate
     const difference = convertMs(ms)
     const result = addLeadingZero(difference)
@@ -55,6 +55,7 @@ function doCount() {
     if ((daysToHTML.textContent === "00") && (hoursToHTML.textContent === "00") && (minutesToHTML.textContent === "00") && (secondsToHTML.textContent === "00")) {
       clearInterval(timeCount)
       inputCalendar.disabled = false
+      buttonCalendar.disabled = true
     }
   }, 1000)
   
